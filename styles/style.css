@@ -1,0 +1,589 @@
+@import "font.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: white;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body.active {
+  overflow: hidden;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 1840px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  position: relative;
+}
+
+.header_bg {
+  width: 100%;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 11, 0.7) 35.462%,
+    rgba(11, 11, 11, 0.35) 127.269%,
+    rgba(11, 11, 11, 0) 133.23%
+  );
+  padding: 20px 0 25px;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 11, 0.7) 35.462%,
+    rgba(11, 11, 11, 0.35) 127.269%,
+    rgba(11, 11, 11, 0) 133.23%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.nav_left {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.nav_logo {
+  padding: 10px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.nav_link {
+  font: 600 clamp(16px, 3vw, 20px) Inter;
+}
+
+.nav_link::first-letter {
+  color: rgb(107, 198, 255);
+}
+
+.user::before {
+  content: "\f007";
+  font-style: normal;
+  font-size: 20px;
+}
+
+.nav_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+.nav_right {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav_input {
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 100px;
+  background: transparent;
+  width: 438px;
+  padding: 10px 100px;
+}
+
+.nav_input::placeholder {
+  color: white;
+  font: 500 clamp(16px, 2vw, 20px) Inter;
+  text-align: center;
+}
+
+.nav_btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transition: 0.3s;
+  background: transparent;
+  z-index: 8;
+  cursor: pointer;
+  display: none;
+}
+
+.nav_btn span,
+.nav_btn span::before,
+.nav_btn span::after {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #a235d18a;
+  top: 50%;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav_btn span::before,
+.nav_btn span::after {
+  content: "";
+  display: block;
+  transition: 0.5s;
+}
+
+.nav_btn span::before {
+  top: -8px;
+}
+
+.nav_btn span::after {
+  top: 8px;
+}
+
+.nav_btn.active span {
+  background: transparent;
+}
+
+.nav_btn.active span::before {
+  background: white;
+  transform: rotate(45deg) translate(6px, 5px);
+}
+
+.nav_btn.active span::after {
+  background: white;
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.nav_bg {
+  position: fixed;
+  inset: 0;
+  background: rgb(9 20 39/ 89%);
+  z-index: 9;
+  display: none;
+}
+
+.nav_bg.active {
+  display: block;
+}
+
+.nav_btn.active {
+  z-index: 12;
+}
+
+/* bg style */
+/* bg style */
+/* bg style */
+/* bg style */
+/* bg style */
+/* bg style */
+
+.bg_span {
+  font: 500 clamp(13px, 2vw, 18px) / 156.4% Montserrat;
+}
+
+.bg_title {
+  font: 600 clamp(20px, 5vw, 75px) / 91px Montserrat;
+  max-width: 874px;
+  margin: 10px 0 36px;
+}
+
+.bg_block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bg_span-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bg_block-span {
+  font: 700 clamp(16px, 2vw, 20px) Montserrat;
+  border: 2px solid rgb(217, 217, 217);
+  border-radius: 5px;
+  transition: 0.5s;
+  padding: 5px;
+
+  &:hover {
+    color: rgb(6, 6, 6);
+    border: 2px solid rgb(189, 93, 5);
+    background: rgb(189, 93, 5);
+  }
+}
+
+.bg_block-episode {
+  font: 600 clamp(16px, 2vw, 20px) Montserrat;
+}
+
+.bg_block-circle {
+  width: 10px;
+  height: 10px;
+  background: rgb(52, 51, 51);
+  border-radius: 50%;
+}
+
+.bg_text {
+  color: rgb(208, 208, 208);
+  font: 600 clamp(15px, 2vw, 18px) / 156.4% Montserrat;
+  max-width: 530px;
+  margin: 50px 0 80px;
+}
+
+.bg_btns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.bg_btn {
+  font: 600 clamp(16px, 2vw, 20px) / 156.4% Montserrat;
+  padding: 15px 20px;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 3px solid transparent;
+  border-radius: 100px;
+
+  &:hover {
+    border: 3px solid rgb(51, 173, 223);
+  }
+}
+
+/* anime */
+/* anime */
+/* anime */
+/* anime */
+/* anime */
+
+.anime {
+  background: url(../images/anime_bg.png) no-repeat center/ cover;
+  padding: 120px 0;
+}
+
+.anime_titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.anime_title {
+  font: 600 clamp(20px, 3vw, 30px) / 37px Montserrat;
+  border-bottom: 2px solid rgb(29, 161, 242);
+  padding-bottom: 4px;
+}
+
+.anime_link {
+  color: rgb(243, 243, 243);
+  font: 600 clamp(15px, 2vw, 24px) Montserrat;
+}
+
+.anime_card {
+  max-width: 257px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.anime_card:hover .anime_hover {
+  height: 55%;
+}
+
+.anime_hover {
+  position: absolute;
+  bottom: 0;
+  border-radius: 0px 0px 10px 10px;
+  background: linear-gradient(90deg, rgb(16, 16, 16), rgba(0, 0, 0, 0.9) 100%);
+  height: 60px;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  padding: 15px 13px;
+}
+
+.anime_hover-title {
+  font: 600 clamp(18px, 2vw, 22px) / 30px Montserrat;
+}
+
+.anime_hover-title span {
+  background: linear-gradient(180deg, rgb(220, 120, 28), rgb(201, 54, 119)) text;
+  color: transparent;
+}
+
+.anime_hover-text {
+  font: 400 clamp(13px, 2vw, 16px) Montserrat;
+}
+
+.anime_cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 52px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.mt {
+  margin-top: 100px;
+}
+
+/* section_bg */
+/* section_bg */
+/* section_bg */
+/* section_bg */
+
+.section_bg {
+  background: url(../images/section_bg.png) no-repeat center/ cover;
+}
+
+/* trailer */
+/* trailer */
+/* trailer */
+/* trailer */
+
+.trailer,
+.upcoming {
+  position: relative;
+  padding: 60px 0 106px;
+}
+
+.trailer::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    rgb(20, 53, 98),
+    rgba(220, 28, 132, 0.94)
+  );
+}
+
+.trailer_left {
+  position: relative;
+  height: max-content;
+}
+
+.trailer_video {
+  max-width: 1110px;
+  width: 100%;
+  height: 533px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.video_bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    91.65deg,
+    rgba(0, 0, 0, 0.44) -38.718%,
+    rgba(0, 0, 0, 0.33) 99.689%
+  );
+}
+
+.trailer_description {
+  max-width: 575px;
+}
+
+.trailer_description-title {
+  color: rgb(217, 217, 217);
+  font: 700 clamp(24px, 4vw, 55px) / 67px Montserrat;
+}
+
+.trailer_description-span {
+  color: rgb(217, 217, 217);
+  font: 700 clamp(16px, 3vw, 30px) / 37px Montserrat;
+  margin: 9px 0 43px;
+}
+
+.trailer_description-text {
+  font: 600 clamp(13px, 2vw, 18px) / 156.4% Montserrat;
+  margin-bottom: 70px;
+}
+
+.trailer_content {
+  display: flex;
+  gap: 50px;
+}
+
+/* upcoming */
+/* upcoming */
+/* upcoming */
+/* upcoming */
+/* upcoming */
+/* upcoming */
+/* upcoming */
+
+.upcoming::before,
+.upcoming::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.upcoming::before {
+  top: -3px;
+  background: linear-gradient(to right, rgb(151, 71, 255), rgb(242, 35, 35));
+}
+
+.upcoming::after {
+  bottom: -3px;
+  background: linear-gradient(to right, rgb(220, 120, 28), rgb(201, 54, 119));
+}
+
+.upcoming_cards {
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  gap: 65px;
+}
+
+.upcoming_card {
+  max-width: 420px;
+  width: 100%;
+}
+
+.upcoming_card-title {
+  font: 700 clamp(24px, 3vw, 40px) / 49px Montserrat;
+}
+
+.upcoming_card-text {
+  font: 600 clamp(13px, 2vw, 18px) / 22px Montserrat;
+}
+
+.upcoming_card-btns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 36px 0;
+  flex-wrap: wrap;
+}
+
+.upcoming_card-btn {
+  background: linear-gradient(180deg, rgb(220, 120, 28), rgb(201, 54, 119)) text;
+  color: transparent;
+  font: 600 clamp(16px, 2vw, 18px) / 22px Montserrat;
+  border: 2px solid rgb(20, 53, 98);
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+/* footer */
+/* footer */
+/* footer */
+/* footer */
+/* footer */
+/* footer */
+/* footer */
+
+.footer {
+  background: url(../images/footer_bg.png) no-repeat center/ cover;
+  padding: 75px 0 145px;
+}
+
+.footer_cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer_card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer_title {
+  font: 700 clamp(22px, 2vw, 25px) / 182.9% Montserrat;
+}
+
+.footer_link {
+  font: 600 clamp(16px, 2vw, 20px) / 182.9% Montserrat;
+}
+
+.footer_list li {
+  list-style: disc;
+}
+
+.instagram::before {
+  content: "\f16d";
+}
+
+.twitter::before {
+  content: "\f099";
+}
+
+.instagram {
+  background: linear-gradient(
+      rgb(151, 71, 255),
+      rgb(207, 66, 123),
+      rgb(189, 93, 5),
+      rgb(242, 35, 35)
+    )
+    text;
+  color: transparent;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.twitter {
+  color: rgb(29, 161, 242);
+  font-size: 30px;
+  font-style: normal;
+}
+
+.footer_card-icons {
+  display: flex;
+  gap: 25px;
+  margin-top: 50px;
+}
