@@ -136,6 +136,19 @@
     display: none;
   }
 
+  .anime_card:hover .anime_hover {
+    height: 50%;
+  }
+
+  .anime_hover {
+    height: 50%;
+    background: linear-gradient(
+      90deg,
+      rgb(16 16 16 / 84%),
+      rgb(0 0 0 / 87%) 100%
+    );
+  }
+
   .trailer_description-span {
     margin: 9px 0 20px;
   }
@@ -181,6 +194,14 @@
 
   .bg_btn {
     padding: 10px 15px;
+  }
+
+  .anime_card:hover .anime_hover {
+    height: 40%;
+  }
+
+  .anime_hover {
+    height: 40%;
   }
 
   .trailer_video,
